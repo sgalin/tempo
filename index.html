@@ -1,0 +1,449 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Intervalos">
+<meta name="theme-color" content="#101214">
+<link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAIAAACyr5FlAAAFY0lEQVR4nO3dUXLbOBBFUTiVBWRS2YC9mlnyrMZeQraQD6QYjpWmJBBovAfe85tKhWhfNWnFJb98+/6jAH/zZfYFQBdxIEQcCBEHQsSBEHEgRBwIEQdCxIEQcSBEHAgRB0LEgdDX2ReQ7ee/b2f++j//vfe6En1sDoSIAyHiQIg4ECIOhIgDIeJAiDgQIg6EiAMh4kCIOBAiDoSIAyHiQIg4EHrhIxgQYXMgRBwIXe5nSDdP/TDppX50dHOVZ46TP1d86wq5rBxH9yAiq4ayYBxpTdxarJJ14pjYxK01KlkhDqks9twT8Y5DNos930Rc47DIYs8xEb847LLY80rE7B1S6zKK2/XbbA6vsd5lsUI8NsdiZRSTE6lvDoshnqG8QqQ3x/JlFO0z6m6OhKk9+KrVuZJkinEM+mJ0/ALoX2EXcnF4/d+619U+SyuOjrNOnrLvlR8QiqPXfCcOd4Ej7KnE0WWsIjNd5iwScZyfpsIoP1ngUPPjWPtTY61PJ/0m2F3iZRSHKzwwOY4zLyyXuZ+5zrnvn868rTSfvGMW7x8fB3/69vra6x8qGud9yrTNYTep85qvfNb+MHvm8C2j8rr+OXG0vRS8JhtpO8WU5TEhjiuXUbn04XFbWamMyuJE2XE05G8xxwYN50peHqlxUMYn4n1I31bWLqNSPmNeHMo/LOklbZK6m0P5JdWX7EmT4ng2dtl5DfLseXOWh+LmuFoZleCpM+LgaWOEhKnKbQ7BF1AatbMPj4O1Mc7o2WptDrWXTj6pCWjFASlj4+BTghs8NYehdxY2B0IqcbA29kSmMTAOvk/JMW7OKpsDgiTiENmiUhRmIhEHNI2KgweOTIOmPX9zKOxPTdMnMz8OyCIOhIgDIeJAaEgcfKuSb8TMJ2+O6Q/k4vjYJ4giDoSIAyHiOPL+8XH8oWFrI477LpsIcTzqgn18nX0Bk336MMnjAuqf9v38SWVsjj8e3A3XucsQR6MrJEIcv7V9pddOhDh+e3t9bX6YWDUR4vgfEtkz/q0J45xMpOOVzJ3PkDjW+L9WrxUyYubcVo5c/C5DHPddNhHieFRzIr7vqBLHc85sETvz49D8huXY44mcKWn6ZEbFscY3LMd0tsigac/fHO4O+hBJp5lEHNP350kjVojCTCTiWMOnRNzXRhkaxxUeO27lP4iMm7PK5lDYoh2d7ENkGipxQNDYOHQ+b9WIzif7sjkQ0oqD5SE1geFxXPN7lhyjZ6u1OYrYSyeZ2tkz4mB5jJAwVbnNUfReQDkET50Uh+avxtSh+atVFTdHdZ0+ZE+aFwdPHr2kTVJ3cxThl1RHymdMjaMheeXZnddwuswFnL056GMjXkYRv61s1uvD4kQT4mjL32KaD2o7S/4T/ZzNceU+XMooLreVjXsfXtc/LY7ml4LXfPear3zWW0Qv377/mPIPV2e+0kbvqpke0/i3JrisENMyyvQ4TtLvQ/8KD0y+rVTnJyh4i1ngUBJxlE6vsOnTrJY5i0ocpd8GnjjWBY6wJxRH6XqHTp6v75Uf0IqjDHiCGzprr6t9llwcZdgTfse5619hF4pxVAnfBD74xdC5kmS6cRTzNwkep1lGEX8TTHZqHSmfUXpzbJZcIcpZVNKbY6M/x2dZnMhjc2wWWCEWWVQem2NjNNm/8rp+s82xsVshXllUrnFUFok4ZlF5x1HJJuKbRbVCHJVUIu5ZVOvEsZlYyRpNbBaMY5NWyWJNbFaOY2/t/1sf5Cpx3NL5LFhZ140Dd5m9Q4pMxIEQcSBEHAgRB0LEgRBxIEQcCBEHQsSBEHEgRBwIEQdCxIEQcSBEHAgRB0LEgRBxIEQcCP0C7APmtz03FrIAAAAASUVORK5CYII=">
+<link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAIAAACyr5FlAAAFY0lEQVR4nO3dUXLbOBBFUTiVBWRS2YC9mlnyrMZeQraQD6QYjpWmJBBovAfe85tKhWhfNWnFJb98+/6jAH/zZfYFQBdxIEQcCBEHQsSBEHEgRBwIEQdCxIEQcSBEHAgRB0LEgdDX2ReQ7ee/b2f++j//vfe6En1sDoSIAyHiQIg4ECIOhIgDIeJAiDgQIg6EiAMh4kCIOBAiDoSIAyHiQIg4EHrhIxgQYXMgRBwIXe5nSDdP/TDppX50dHOVZ46TP1d86wq5rBxH9yAiq4ayYBxpTdxarJJ14pjYxK01KlkhDqks9twT8Y5DNos930Rc47DIYs8xEb847LLY80rE7B1S6zKK2/XbbA6vsd5lsUI8NsdiZRSTE6lvDoshnqG8QqQ3x/JlFO0z6m6OhKk9+KrVuZJkinEM+mJ0/ALoX2EXcnF4/d+619U+SyuOjrNOnrLvlR8QiqPXfCcOd4Ej7KnE0WWsIjNd5iwScZyfpsIoP1ngUPPjWPtTY61PJ/0m2F3iZRSHKzwwOY4zLyyXuZ+5zrnvn868rTSfvGMW7x8fB3/69vra6x8qGud9yrTNYTep85qvfNb+MHvm8C2j8rr+OXG0vRS8JhtpO8WU5TEhjiuXUbn04XFbWamMyuJE2XE05G8xxwYN50peHqlxUMYn4n1I31bWLqNSPmNeHMo/LOklbZK6m0P5JdWX7EmT4ng2dtl5DfLseXOWh+LmuFoZleCpM+LgaWOEhKnKbQ7BF1AatbMPj4O1Mc7o2WptDrWXTj6pCWjFASlj4+BTghs8NYehdxY2B0IqcbA29kSmMTAOvk/JMW7OKpsDgiTiENmiUhRmIhEHNI2KgweOTIOmPX9zKOxPTdMnMz8OyCIOhIgDIeJAaEgcfKuSb8TMJ2+O6Q/k4vjYJ4giDoSIAyHiOPL+8XH8oWFrI477LpsIcTzqgn18nX0Bk336MMnjAuqf9v38SWVsjj8e3A3XucsQR6MrJEIcv7V9pddOhDh+e3t9bX6YWDUR4vgfEtkz/q0J45xMpOOVzJ3PkDjW+L9WrxUyYubcVo5c/C5DHPddNhHieFRzIr7vqBLHc85sETvz49D8huXY44mcKWn6ZEbFscY3LMd0tsigac/fHO4O+hBJp5lEHNP350kjVojCTCTiWMOnRNzXRhkaxxUeO27lP4iMm7PK5lDYoh2d7ENkGipxQNDYOHQ+b9WIzif7sjkQ0oqD5SE1geFxXPN7lhyjZ6u1OYrYSyeZ2tkz4mB5jJAwVbnNUfReQDkET50Uh+avxtSh+atVFTdHdZ0+ZE+aFwdPHr2kTVJ3cxThl1RHymdMjaMheeXZnddwuswFnL056GMjXkYRv61s1uvD4kQT4mjL32KaD2o7S/4T/ZzNceU+XMooLreVjXsfXtc/LY7ml4LXfPear3zWW0Qv377/mPIPV2e+0kbvqpke0/i3JrisENMyyvQ4TtLvQ/8KD0y+rVTnJyh4i1ngUBJxlE6vsOnTrJY5i0ocpd8GnjjWBY6wJxRH6XqHTp6v75Uf0IqjDHiCGzprr6t9llwcZdgTfse5619hF4pxVAnfBD74xdC5kmS6cRTzNwkep1lGEX8TTHZqHSmfUXpzbJZcIcpZVNKbY6M/x2dZnMhjc2wWWCEWWVQem2NjNNm/8rp+s82xsVshXllUrnFUFok4ZlF5x1HJJuKbRbVCHJVUIu5ZVOvEsZlYyRpNbBaMY5NWyWJNbFaOY2/t/1sf5Cpx3NL5LFhZ140Dd5m9Q4pMxIEQcSBEHAgRB0LEgRBxIEQcCBEHQsSBEHEgRBwIEQdCxIEQcSBEHAgRB0LEgRBxIEQcCP0C7APmtz03FrIAAAAASUVORK5CYII=">
+<title>Intervalos</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;700&family=Barlow:wght@400;500;600&display=swap">
+<style>
+:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+body{margin:0}
+[hidden]{display:none!important}
+/* Layout: una columna tipo "pizarra de box": reloj grande arriba, rutinas y ajustes con steppers debajo */
+:root{
+  --bg:#101214; --panel:#1a1d21; --line:#2b3036; --fg:#eef1f3; --muted:#8c949c;
+  --work:#ff5a36; --rest:#2fc4a0; --prep:#f2c230; --cycle:#6aa8ff; --danger:#ff6b6b;
+  --display:"Chakra Petch", "DIN Alternate", ui-monospace, monospace;
+  --body:"Barlow", system-ui, -apple-system, "Segoe UI", sans-serif;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html,body{background:var(--bg);color:var(--fg)}
+body{font-family:var(--body);font-size:15px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:16px 32px}
+.wrap{max-width:560px;margin:0 auto;display:flex;flex-direction:column;gap:18px}
+header{display:flex;justify-content:space-between;align-items:center;gap:12px}
+h1{font-family:var(--display);font-size:1.25rem;letter-spacing:.08em;text-transform:uppercase;margin:0}
+.hdr-right{display:flex;align-items:center;gap:10px}
+.total{color:var(--muted);font-variant-numeric:tabular-nums;font-size:.9rem}
+.sound{font:600 .8rem var(--body);letter-spacing:.06em;text-transform:uppercase;padding:7px 10px;border-radius:8px;border:1px solid var(--line);background:var(--panel);color:var(--fg);cursor:pointer;white-space:nowrap}
+.sound[data-s="off"]{color:var(--muted)}
+
+.presets{display:flex;gap:6px;flex-wrap:wrap}
+.presets button{flex:1 1 0;min-width:70px;font:600 .85rem var(--body);letter-spacing:.06em;text-transform:uppercase;padding:10px 6px;border-radius:8px;border:1px solid var(--line);background:transparent;color:var(--muted);cursor:pointer}
+.presets button[aria-pressed="true"]{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+
+.clock{--c:var(--muted);border:2px solid var(--c);border-radius:16px;padding:18px 16px 16px;display:flex;flex-direction:column;align-items:center;gap:6px;background:var(--panel);position:relative;overflow:hidden;transition:border-color .2s}
+.clock .bar{position:absolute;left:0;bottom:0;height:6px;background:var(--c);width:0%}
+.phase{font-family:var(--display);font-weight:700;font-size:1.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--c)}
+.rname{color:var(--muted);font-size:.85rem;min-height:1.1em;text-align:center}
+.time{font-family:var(--display);font-weight:700;font-size:clamp(4.5rem,24vw,8rem);line-height:1;font-variant-numeric:tabular-nums}
+.time.pulse{animation:pulse .5s ease-out}
+@keyframes pulse{0%{transform:scale(1.12);color:var(--prep)}100%{transform:scale(1);color:var(--fg)}}
+.clock.flash{animation:flash .6s ease-out}
+@keyframes flash{0%{background:var(--c)}100%{background:var(--panel)}}
+.next{color:var(--muted);font-size:.85rem;min-height:1.1em}
+.next b{color:var(--fg)}
+.meta{display:flex;gap:18px;color:var(--muted);font-variant-numeric:tabular-nums;font-size:.95rem}
+.meta b{color:var(--fg);font-weight:600}
+.clock[data-phase="work"]{--c:var(--work)}
+.clock[data-phase="rest"]{--c:var(--rest)}
+.clock[data-phase="prep"]{--c:var(--prep)}
+.clock[data-phase="cycle"]{--c:var(--cycle)}
+.clock[data-phase="done"]{--c:var(--rest)}
+
+.controls{display:grid;grid-template-columns:1fr 2fr 1fr;gap:8px}
+.controls button{font:700 1rem var(--display);letter-spacing:.08em;text-transform:uppercase;padding:16px 8px;border-radius:10px;border:1px solid var(--line);background:var(--panel);color:var(--fg);cursor:pointer}
+#start{background:var(--work);border-color:var(--work);color:#fff}
+#start.running{background:var(--panel);border-color:var(--line);color:var(--fg)}
+
+.section-h{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin:0 0 8px}
+.section-h h2{font:700 .8rem var(--body);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:0}
+.section-h .sync{color:var(--muted);font-size:.75rem}
+.routines{display:flex;flex-direction:column;gap:6px}
+.rlist{display:flex;flex-direction:column;gap:6px}
+.ritem{display:flex;align-items:center;gap:6px;border:1px solid var(--line);border-radius:10px;background:var(--panel);padding:4px 4px 4px 0}
+.ritem.active{border-color:var(--fg)}
+.ritem .load{flex:1;min-width:0;display:flex;flex-direction:column;align-items:flex-start;gap:2px;background:none;border:0;color:var(--fg);text-align:left;padding:8px 12px;cursor:pointer}
+.ritem .load span:first-child{font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:100%}
+.ritem .load span:last-child{color:var(--muted);font-size:.8rem;font-variant-numeric:tabular-nums}
+.ritem .del{width:38px;height:38px;border-radius:8px;border:1px solid transparent;background:none;color:var(--muted);font-size:1.1rem;cursor:pointer;flex:none}
+.ritem .del.confirm{width:auto;padding:0 10px;border-color:var(--danger);color:var(--danger);font:600 .8rem var(--body)}
+.empty{color:var(--muted);font-size:.9rem;padding:4px 0}
+.saverow{display:flex;gap:6px}
+.saverow input{flex:1;min-width:0;font:500 1rem var(--body);padding:10px 12px;border-radius:8px;border:1px solid var(--line);background:var(--panel);color:var(--fg)}
+.saverow button{font:600 .85rem var(--body);letter-spacing:.06em;text-transform:uppercase;padding:0 14px;border-radius:8px;border:1px solid var(--fg);background:var(--fg);color:var(--bg);cursor:pointer;white-space:nowrap}
+.saverow button:disabled{opacity:.4;cursor:default}
+.toast{color:var(--rest);font-size:.85rem;min-height:1.1em}
+
+.settings{display:flex;flex-direction:column;border-top:1px solid var(--line)}
+.row{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px solid var(--line)}
+.row label{display:flex;flex-direction:column;min-width:0}
+.row .hint{color:var(--muted);font-size:.8rem}
+.row .dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:8px;vertical-align:middle}
+.step{display:flex;align-items:center;gap:4px}
+.step button{width:40px;height:40px;border-radius:8px;border:1px solid var(--line);background:var(--panel);color:var(--fg);font:700 1.2rem var(--display);cursor:pointer}
+.step input{width:74px;text-align:center;font:700 1.15rem var(--display);font-variant-numeric:tabular-nums;background:transparent;border:0;color:var(--fg);padding:6px 0}
+.row.off{opacity:.35}
+.footnote{color:var(--muted);font-size:.8rem;line-height:1.5;margin:0}
+button:focus-visible,input:focus-visible{outline:2px solid var(--prep);outline-offset:2px}
+fieldset{border:0;margin:0;padding:0}
+fieldset:disabled{opacity:.6}
+button,input{touch-action:manipulation;-webkit-tap-highlight-color:transparent}
+html,body{-webkit-text-size-adjust:100%;overscroll-behavior:none}
+/* Modo entreno: mientras corre, solo reloj y controles */
+body.running .presets,body.running .routines,body.running .settings,body.running .footnote,body.running .total{display:none}
+body.running .wrap{min-height:calc(100dvh - 48px);justify-content:center}
+body.running .clock{flex:1;justify-content:center;padding-block:28px}
+body.running .time{font-size:clamp(6rem,38vw,16rem)}
+body.running .phase{font-size:clamp(1.6rem,8vw,3rem)}
+body.running .controls button{padding-block:22px}
+@media (orientation:landscape) and (max-height:500px){
+  body.running .wrap{max-width:none;min-height:calc(100dvh - 32px)}
+  body.running .time{font-size:clamp(5rem,30vh,14rem)}
+  body.running header{display:none}
+}
+@media (prefers-reduced-motion:reduce){.clock,.time.pulse,.clock.flash{transition:none;animation:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>Intervalos</h1>
+    <div class="hdr-right">
+      <span class="total" id="total">Total 4:10</span>
+      <button class="sound" id="sound" data-s="beep" aria-label="Tipo de aviso">🔊 Pitidos</button>
+    </div>
+  </header>
+
+  <div class="presets" role="group" aria-label="Modo">
+    <button data-p="tabata" aria-pressed="true">Tabata</button>
+    <button data-p="emom" aria-pressed="false">EMOM</button>
+    <button data-p="amrap" aria-pressed="false">AMRAP</button>
+    <button data-p="custom" aria-pressed="false">Libre</button>
+  </div>
+
+  <section class="clock" id="clock" data-phase="idle" aria-live="polite">
+    <div class="phase" id="phase">Listo</div>
+    <div class="rname" id="rname"></div>
+    <div class="time" id="time">0:20</div>
+    <div class="next" id="next"></div>
+    <div class="meta">
+      <span>Serie <b id="rnd">1/8</b></span>
+      <span>Ciclo <b id="cyc">1/1</b></span>
+    </div>
+    <div class="bar" id="bar"></div>
+  </section>
+
+  <div class="controls">
+    <button id="reset">Reiniciar</button>
+    <button id="start">Empezar</button>
+    <button id="skip">Saltar</button>
+  </div>
+
+  <section class="routines" aria-labelledby="rh">
+    <div class="section-h"><h2 id="rh">Mis rutinas</h2><span class="sync" id="sync">En este iPhone</span></div>
+    <div class="rlist" id="rlist"><div class="empty">Ajusta los tiempos abajo y guárdalos con un nombre para tenerlos a un toque.</div></div>
+    <div class="saverow">
+      <input id="rnameInput" maxlength="40" placeholder="Nombre, p. ej. Tabata burpees" autocomplete="off">
+      <button id="save" disabled>Guardar</button>
+    </div>
+    <div class="toast" id="toast" role="status"></div>
+  </section>
+
+  <fieldset class="settings" id="settings">
+    <div class="row" data-k="work"><label><span><i class="dot" style="background:var(--work)"></i>Trabajo</span><span class="hint">mm:ss o segundos</span></label><div class="step"><button data-d="-5" aria-label="Menos trabajo">−</button><input id="work" inputmode="numeric"><button data-d="5" aria-label="Más trabajo">+</button></div></div>
+    <div class="row" data-k="rest"><label><span><i class="dot" style="background:var(--rest)"></i>Descanso</span><span class="hint">entre series</span></label><div class="step"><button data-d="-5" aria-label="Menos descanso">−</button><input id="rest" inputmode="numeric"><button data-d="5" aria-label="Más descanso">+</button></div></div>
+    <div class="row" data-k="rounds"><label><span>Series</span><span class="hint">por ciclo</span></label><div class="step"><button data-d="-1" aria-label="Menos series">−</button><input id="rounds" inputmode="numeric"><button data-d="1" aria-label="Más series">+</button></div></div>
+    <div class="row" data-k="cycles"><label><span>Ciclos</span><span class="hint">bloques completos</span></label><div class="step"><button data-d="-1" aria-label="Menos ciclos">−</button><input id="cycles" inputmode="numeric"><button data-d="1" aria-label="Más ciclos">+</button></div></div>
+    <div class="row" data-k="cycleRest"><label><span><i class="dot" style="background:var(--cycle)"></i>Descanso entre ciclos</span></label><div class="step"><button data-d="-15" aria-label="Menos descanso entre ciclos">−</button><input id="cycleRest" inputmode="numeric"><button data-d="15" aria-label="Más descanso entre ciclos">+</button></div></div>
+    <div class="row" data-k="prep"><label><span><i class="dot" style="background:var(--prep)"></i>Preparación</span><span class="hint">cuenta atrás inicial</span></label><div class="step"><button data-d="-5" aria-label="Menos preparación">−</button><input id="prep" inputmode="numeric"><button data-d="5" aria-label="Más preparación">+</button></div></div>
+  </fieldset>
+
+  <p class="footnote">En los 3 últimos segundos de cada fase suena una cuenta atrás (3, 2, 1) y al cambiar suena un tono largo: agudo al empezar a trabajar, grave al descansar. El botón de arriba alterna entre pitidos, voz y silencio. En iPhone (iOS 17 o posterior) suena aunque el interruptor de silencio esté activado. Mientras corre, la pantalla muestra solo el reloj; gira el móvil para verlo en grande.</p>
+</div>
+
+<script>
+(()=>{
+const PRESETS={
+  tabata:{work:20,rest:10,rounds:8,cycles:1,cycleRest:60,prep:10},
+  emom:{work:60,rest:0,rounds:10,cycles:1,cycleRest:0,prep:10},
+  amrap:{work:720,rest:0,rounds:1,cycles:1,cycleRest:0,prep:10},
+  custom:{work:40,rest:20,rounds:5,cycles:3,cycleRest:90,prep:10}
+};
+const KEYS=["work","rest","rounds","cycles","cycleRest","prep"];
+const TIMEKEYS=["work","rest","cycleRest","prep"];
+const LIMITS={work:[5,5999],rest:[0,5999],rounds:[1,99],cycles:[1,20],cycleRest:[0,5999],prep:[0,60]};
+const $=id=>document.getElementById(id);
+const ls={get(k,d){try{const v=localStorage.getItem(k);return v==null?d:JSON.parse(v)}catch(e){return d}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
+
+let mode="tabata", cfg={...PRESETS.tabata}, activeRoutine=null;
+PRESETS.custom={...PRESETS.custom,...(ls.get("intervalos.custom",{})||{})};
+let soundMode=ls.get("intervalos.sound","beep");
+
+const fmt=s=>{s=Math.max(0,Math.ceil(s));const m=Math.floor(s/60),r=s%60;return m+":"+String(r).padStart(2,"0")};
+const parse=v=>{v=String(v).trim();if(v.includes(":")){const[m,s]=v.split(":");return (parseInt(m)||0)*60+(parseInt(s)||0)}return parseInt(v)||0};
+const clamp=(k,v)=>Math.min(LIMITS[k][1],Math.max(LIMITS[k][0],v));
+const pick=o=>{const r={};KEYS.forEach(k=>r[k]=clamp(k,Number(o[k])||0));return r};
+const same=(a,b)=>KEYS.every(k=>a[k]===b[k]);
+const summary=c=>{
+  const parts=[fmt(c.work)+(c.rest?" / "+fmt(c.rest):"")];
+  if(c.rounds>1)parts.push("×"+c.rounds);
+  if(c.cycles>1)parts.push(c.cycles+" ciclos");
+  return parts.join(" · ")+" — "+fmt(totalOf(c));
+};
+function totalOf(c){return c.prep+c.cycles*(c.rounds*c.work+(c.rounds-1)*c.rest)+(c.cycles-1)*c.cycleRest}
+
+function render(){
+  KEYS.forEach(k=>{$(k).value=TIMEKEYS.includes(k)?fmt(cfg[k]):cfg[k]});
+  document.querySelectorAll(".presets button").forEach(b=>b.setAttribute("aria-pressed",!activeRoutine&&b.dataset.p===mode));
+  document.querySelector('[data-k="rest"]').classList.toggle("off",cfg.rounds<2);
+  document.querySelector('[data-k="cycleRest"]').classList.toggle("off",cfg.cycles<2);
+  $("total").textContent="Total "+fmt(totalOf(cfg));
+  const r=activeRoutine&&routines.find(x=>x.id===activeRoutine);
+  $("rname").textContent=r?r.name+(same(pick(r),cfg)?"":" (modificada)"):"";
+  renderRoutines();
+  if(!state.started)idle();
+}
+function saveCustom(){if(mode==="custom"&&!activeRoutine){PRESETS.custom={...cfg};ls.set("intervalos.custom",cfg)}}
+function setVal(k,v){
+  if(state.started)return;
+  cfg[k]=clamp(k,v);
+  if(!activeRoutine)mode="custom";
+  saveCustom();render();
+}
+document.querySelectorAll(".presets button").forEach(b=>b.onclick=()=>{if(state.started)stop();mode=b.dataset.p;activeRoutine=null;cfg={...PRESETS[mode]};render()});
+document.querySelectorAll(".row").forEach(row=>{
+  const k=row.dataset.k, input=row.querySelector("input");
+  row.querySelectorAll("button").forEach(btn=>btn.onclick=()=>{
+    let d=+btn.dataset.d;
+    if(k==="work"&&cfg.work>=120)d=d*6; // pasos de 30 s en tiempos largos (AMRAP)
+    setVal(k,cfg[k]+d);
+  });
+  input.onchange=()=>setVal(k,TIMEKEYS.includes(k)?parse(input.value):parseInt(input.value)||0);
+});
+
+/* ---------- rutinas guardadas ---------- */
+let routines=ls.get("intervalos.routines",[])||[];
+let store=null; // {col} cuando hay sincronización con la cuenta
+let pendingDelete=null;
+
+function renderRoutines(){
+  const list=$("rlist");
+  list.textContent="";
+  if(!routines.length){
+    const e=document.createElement("div");e.className="empty";
+    e.textContent="Ajusta los tiempos abajo y guárdalos con un nombre para tenerlos a un toque.";
+    list.append(e);return;
+  }
+  [...routines].sort((a,b)=>a.name.localeCompare(b.name,"es")).forEach(r=>{
+    const item=document.createElement("div");item.className="ritem"+(r.id===activeRoutine?" active":"");
+    const load=document.createElement("button");load.className="load";
+    const n=document.createElement("span");n.textContent=r.name;
+    const s=document.createElement("span");s.textContent=summary(pick(r));
+    load.append(n,s);
+    load.onclick=()=>{if(state.started)stop();activeRoutine=r.id;mode="custom";cfg=pick(r);$("rnameInput").value=r.name;updateSaveBtn();render()};
+    const del=document.createElement("button");
+    const confirming=pendingDelete===r.id;
+    del.className="del"+(confirming?" confirm":"");
+    del.textContent=confirming?"¿Borrar?":"✕";
+    del.setAttribute("aria-label",confirming?"Confirmar borrar "+r.name:"Borrar "+r.name);
+    del.onclick=()=>{
+      if(!confirming){pendingDelete=r.id;renderRoutines();setTimeout(()=>{if(pendingDelete===r.id){pendingDelete=null;renderRoutines()}},3000);return}
+      pendingDelete=null;removeRoutine(r.id);
+    };
+    item.append(load,del);list.append(item);
+  });
+}
+function updateSaveBtn(){
+  const name=$("rnameInput").value.trim();
+  const ex=routines.find(r=>r.name.toLowerCase()===name.toLowerCase());
+  $("save").disabled=!name;
+  $("save").textContent=ex?"Actualizar":"Guardar";
+}
+$("rnameInput").oninput=updateSaveBtn;
+$("rnameInput").onkeydown=e=>{if(e.key==="Enter"&&!$("save").disabled)$("save").click()};
+function toast(t){$("toast").textContent=t;clearTimeout(toast.t);toast.t=setTimeout(()=>$("toast").textContent="",2500)}
+
+async function upsertRoutine(){
+  const name=$("rnameInput").value.trim();if(!name)return;
+  const ex=routines.find(r=>r.name.toLowerCase()===name.toLowerCase());
+  const id=ex?ex.id:"r"+Date.now().toString(36)+Math.random().toString(36).slice(2,6);
+  const doc={name,...cfg,updatedAt:Date.now()};
+  routines=routines.filter(r=>r.id!==id).concat([{id,...doc}]);
+  activeRoutine=id;ls.set("intervalos.routines",routines);
+  render();updateSaveBtn();toast(ex?"Rutina actualizada":"Rutina guardada");
+  if(store){try{await store.col.doc(id).set(doc)}catch(e){toast("Guardada solo en este navegador")}}
+}
+async function removeRoutine(id){
+  routines=routines.filter(r=>r.id!==id);
+  if(activeRoutine===id)activeRoutine=null;
+  ls.set("intervalos.routines",routines);render();toast("Rutina borrada");
+  if(store){try{await store.col.doc(id).delete()}catch(e){}}
+}
+$("save").onclick=upsertRoutine;
+
+// Sincroniza con tu cuenta cuando el visor lo permite; si no, se quedan en el navegador.
+(async()=>{
+  try{
+    if(!window.claude||!claude.use)return;
+    const [db,user]=await Promise.all([claude.use("db"),claude.use("user")]);
+    if(!db||!user)return;
+    const uid=await user.id();if(!uid)return;
+    const col=db.collection("data/users/"+uid);
+    store={col};
+    // sube las rutinas locales que aún no estén en la cuenta
+    const snap=await col.get();
+    const remoteIds=new Set(snap.docs.map(d=>d.id));
+    for(const r of routines){if(!remoteIds.has(r.id)){const {id,...body}=r;try{await col.doc(id).set(body)}catch(e){}}}
+    col.onSnapshot(s=>{
+      routines=s.docs.filter(d=>d.exists).map(d=>({id:d.id,...d.data()})).filter(r=>r.name);
+      ls.set("intervalos.routines",routines);
+      if(activeRoutine&&!routines.some(r=>r.id===activeRoutine))activeRoutine=null;
+      render();
+    },()=>{});
+    $("sync").textContent="Sincronizadas con tu cuenta";
+  }catch(e){store=null}
+})();
+
+/* ---------- secuencia ---------- */
+function buildPlan(){
+  const p=[];
+  if(cfg.prep>0)p.push({t:"prep",d:cfg.prep,r:1,c:1});
+  for(let c=1;c<=cfg.cycles;c++){
+    for(let r=1;r<=cfg.rounds;r++){
+      p.push({t:"work",d:cfg.work,r,c});
+      if(r<cfg.rounds&&cfg.rest>0)p.push({t:"rest",d:cfg.rest,r,c});
+    }
+    if(c<cfg.cycles&&cfg.cycleRest>0)p.push({t:"cycle",d:cfg.cycleRest,r:cfg.rounds,c});
+  }
+  return p;
+}
+const LABEL={prep:"Prepárate",work:"Trabajo",rest:"Descanso",cycle:"Fin de ciclo",done:"Terminado",idle:"Listo"};
+const NEXT={prep:"Trabajo",work:"Trabajo",rest:"Descanso",cycle:"Descanso de ciclo"};
+const state={running:false,started:false,plan:[],i:0,endAt:0,left:0,lastBeep:null,raf:0};
+
+function show(seg,left){
+  $("clock").dataset.phase=seg.t;
+  $("phase").textContent=LABEL[seg.t];
+  $("time").textContent=fmt(left);
+  $("rnd").textContent=seg.r+"/"+cfg.rounds;
+  $("cyc").textContent=seg.c+"/"+cfg.cycles;
+  $("bar").style.width=(100*(1-left/seg.d)).toFixed(2)+"%";
+  const nx=state.plan[state.i+1];
+  $("next").innerHTML="";
+  const t=document.createElement("span");t.textContent="Después: ";
+  const b=document.createElement("b");b.textContent=nx?NEXT[nx.t]+" "+fmt(nx.d):"Fin";
+  $("next").append(t,b);
+}
+function idle(){$("clock").dataset.phase="idle";$("phase").textContent=LABEL.idle;$("time").textContent=fmt(cfg.prep||cfg.work);$("next").textContent="";$("rnd").textContent="1/"+cfg.rounds;$("cyc").textContent="1/"+cfg.cycles;$("bar").style.width="0%"}
+
+function pulse(){const t=$("time");t.classList.remove("pulse");void t.offsetWidth;t.classList.add("pulse")}
+function flash(){const c=$("clock");c.classList.remove("flash");void c.offsetWidth;c.classList.add("flash")}
+
+function tick(){
+  if(!state.running)return;
+  const now=performance.now();
+  let left=(state.endAt-now)/1000;
+  while(left<=0){
+    state.i++;
+    if(state.i>=state.plan.length){finish();return}
+    const s=state.plan[state.i];
+    state.endAt+=s.d*1000; left=(state.endAt-now)/1000;
+    phaseCue(s.t); flash(); state.lastBeep=null;
+  }
+  const sec=Math.ceil(left);
+  if(sec<=3&&sec>=1&&state.lastBeep!==sec&&state.plan[state.i].d>3){state.lastBeep=sec;countCue(sec);pulse()}
+  state.left=left;
+  show(state.plan[state.i],left);
+  state.raf=requestAnimationFrame(tick);
+}
+function start(){
+  audio();
+  if(!state.started){
+    state.plan=buildPlan();state.i=0;state.started=true;state.lastBeep=null;
+    state.endAt=performance.now()+state.plan[0].d*1000;
+    phaseCue(state.plan[0].t);
+  }else{state.endAt=performance.now()+state.left*1000}
+  state.running=true;$("settings").disabled=true;document.body.classList.add("running");
+  $("start").textContent="Pausa";$("start").classList.add("running");
+  lock();tick();
+}
+function pause(){state.running=false;document.body.classList.remove("running");cancelAnimationFrame(state.raf);$("start").textContent="Seguir";$("start").classList.remove("running");$("phase").textContent="Pausa";unlock()}
+function stop(){state.running=false;document.body.classList.remove("running");state.started=false;cancelAnimationFrame(state.raf);$("settings").disabled=false;$("start").textContent="Empezar";$("start").classList.remove("running");unlock();idle()}
+function finish(){
+  state.running=false;document.body.classList.remove("running");state.started=false;$("settings").disabled=false;
+  $("clock").dataset.phase="done";$("phase").textContent=LABEL.done;$("time").textContent=fmt(totalOf(cfg));$("bar").style.width="100%";$("next").textContent="";
+  $("start").textContent="Otra vez";$("start").classList.remove("running");
+  flash();doneCue();unlock();
+}
+$("start").onclick=()=>state.running?pause():start();
+$("reset").onclick=stop;
+$("skip").onclick=()=>{if(!state.started)return;if(!state.running){state.left=0;start()}else state.endAt=performance.now()};
+document.addEventListener("keydown",e=>{if(e.code==="Space"&&e.target.tagName!=="INPUT"){e.preventDefault();$("start").click()}});
+
+/* ---------- avisos: pitidos, voz o silencio ---------- */
+const SOUND_LABEL={beep:"🔊 Pitidos",voice:"🗣 Voz",off:"🔇 Silencio"};
+function renderSound(){$("sound").dataset.s=soundMode;$("sound").textContent=SOUND_LABEL[soundMode]}
+$("sound").onclick=()=>{soundMode={beep:"voice",voice:"off",off:"beep"}[soundMode];ls.set("intervalos.sound",soundMode);renderSound();audio();if(soundMode==="beep")beep(660,.15);if(soundMode==="voice")say("Voz activada")};
+renderSound();
+
+let ctx=null;
+let unlocked=false;
+function audio(){
+  // iOS 17+: que suene aunque el interruptor de silencio esté activado
+  try{if(navigator.audioSession)navigator.audioSession.type="playback"}catch(e){}
+  try{
+    ctx=ctx||new (window.AudioContext||window.webkitAudioContext)();
+    if(ctx.state!=="running"&&ctx.resume)ctx.resume();
+    if(!unlocked){ // iOS solo desbloquea el audio si suena algo dentro de un toque
+      const b=ctx.createBuffer(1,1,22050),src=ctx.createBufferSource();src.buffer=b;src.connect(ctx.destination);src.start(0);
+      if("speechSynthesis" in window){const u=new SpeechSynthesisUtterance(" ");u.volume=0;speechSynthesis.speak(u)}
+      unlocked=true;
+    }
+  }catch(e){}
+}
+document.addEventListener("touchend",audio,{once:true,passive:true});
+function beep(f,dur,vol=.35,delay=0){
+  if(!ctx)return;
+  try{const t0=ctx.currentTime+delay,o=ctx.createOscillator(),g=ctx.createGain();o.type="square";o.frequency.value=f;
+    g.gain.setValueAtTime(0.0001,t0);g.gain.exponentialRampToValueAtTime(vol,t0+.01);g.gain.exponentialRampToValueAtTime(.0001,t0+dur);
+    o.connect(g).connect(ctx.destination);o.start(t0);o.stop(t0+dur+.02)}catch(e){}
+}
+function say(text){
+  try{if(!("speechSynthesis" in window))return;speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(text);u.lang="es-ES";u.rate=1.15;speechSynthesis.speak(u)}catch(e){}
+}
+function vibrate(p){try{navigator.vibrate&&navigator.vibrate(p)}catch(e){}}
+const WORDS={3:"tres",2:"dos",1:"uno"};
+function countCue(sec){
+  vibrate(80);
+  if(soundMode==="beep")beep(sec===1?740:620,.16,.4); // 3 y 2 iguales, el 1 algo más agudo
+  else if(soundMode==="voice")say(WORDS[sec]);
+}
+function phaseCue(t){
+  vibrate(t==="work"?[200,80,200]:300);
+  if(soundMode==="beep"){if(t==="work"){beep(988,.5,.45)}else{beep(440,.6,.4)}}
+  else if(soundMode==="voice")say({work:"¡Vamos!",rest:"Descansa",cycle:"Fin de ciclo, descansa",prep:"Prepárate"}[t]);
+}
+function doneCue(){
+  vibrate([200,100,200,100,400]);
+  if(soundMode==="beep"){beep(880,.2,.4);beep(880,.2,.4,.25);beep(1175,.7,.45,.5)}
+  else if(soundMode==="voice")say("Terminado. Buen trabajo");
+}
+
+let wake=null;
+async function lock(){try{wake=await navigator.wakeLock.request("screen")}catch(e){}}
+function unlock(){try{wake&&wake.release();wake=null}catch(e){}}
+document.addEventListener("visibilitychange",()=>{if(document.visibilityState==="visible"){if(ctx&&ctx.state!=="running"){try{ctx.resume()}catch(e){}}if(state.running)lock()}});
+
+updateSaveBtn();render();
+})();
+</script>
+</body>
+</html>
